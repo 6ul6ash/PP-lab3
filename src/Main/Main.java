@@ -47,13 +47,11 @@ public class Main {
                     break;
 
                 case 3:
-                    lastBattleResult = Battle1v1.fight(droids, sc);
-                    lastBattleType = "1v1";
+                    String result1v1 = Battle1v1.fight(droids, sc);
                     break;
 
                 case 4:
-                    lastBattleResult = Battle2v2.fight(droids, sc);
-                    lastBattleType = "2v2";
+                    String result2v2 = Battle2v2.fight(droids, sc);
                     break;
 
                 case 5:
@@ -61,13 +59,14 @@ public class Main {
                     int i = sc.nextInt();
                     sc.nextLine();
 
-                    String result;
                     if (i == 1) {
-                        result = Battle1v1.fight(droids, sc);
-                        saveBattle("1v1 result: " + result);
+                        lastBattleResult = Battle1v1.fight(droids, sc);
+                        lastBattleType = "1v1";
+                        saveBattle("1v1 result: " + lastBattleResult);
                     } else if (i == 2) {
-                        result = Battle2v2.fight(droids, sc);
-                        saveBattle("2v2 result: " + result);
+                        lastBattleResult = Battle2v2.fight(droids, sc);
+                        lastBattleType = "2v2";
+                        saveBattle("2v2 result: " + lastBattleResult);
                     } else {
                         System.out.println("Invalid choice. No result saved.");
                     }
@@ -124,7 +123,7 @@ public class Main {
             result = lastBattleResult;
         }
 
-        System.out.println("Battle replay finished: " + lastBattleResult + "won");
+        System.out.println("Battle replay finished: " + lastBattleResult + " won");
     }
 
 }
