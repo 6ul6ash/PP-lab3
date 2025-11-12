@@ -1,0 +1,6 @@
+=== Battle Result ===
+2v2 result: Team 1
+
+=== Battle Result ===
+1v1 result: HeavyDroid
+
